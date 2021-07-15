@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>教务系统登录</title>
+		<style>
+			body{
+				color:#1E9FFF;
+				background-color: #1E9FFF;
+			}
+			#logindiv{
+				background-color: white;
+				width:440px;
+				height:420px;
+				margin:0 auto;
+				color:#1E9FFF;
+				margin-top: 100px;
+				text-align: center;
+				padding-top:20px;
+			}
+			#uname{
+				width: 350px;
+				height: 30px;
+				border-radius:5px;
+				border: 1px solid darkgray;
+				margin-left:-25px;
+				background-color:transparent;/*背景颜色透明*/
+				padding-left: 30px;
+			}
+			#upass{
+				width: 350px;
+				height: 30px;
+				border-radius:5px;
+				border: 1px solid darkgray;
+				margin-left:-25px;
+				background-color:transparent;/*背景颜色透明*/
+				padding-left: 30px;
+				margin-top: 11px;
+			}
+			#loginbtn{
+				width: 380px;
+				height: 35px;
+				margin-top: 11px;
+				background-color: #1E9FFF;
+				color: white;
+				border:1px solid #1E9FFF;
+				margin-bottom: 20px;
+			}
+			#thirddiv{
+				margin-top: 90px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="logindiv">
+			<h1>教务系统登录平台</h1>
+			<img src="image/01.jpg">
+			<input type="text" id="uname" name="username" placeholder="用户名">
+			<br>
+			<img src="image/02.jpg">
+			<input type="password" id="upass" name="userpass" >
+			<br>
+			<button id="loginbtn">登录</button>
+			<br>
+			<a href="https://graph.qq.com/oauth2.0/show?which=Login&display=pc&response_type=code&redirect_uri=http%3A%2F%2Fspcdp.cdposs.qq.com%2Fauth%2Fcallback&client_id=101477813&state=http%3A%2F%2Fspcdp.cdposs.qq.com%2F"><img src="image/qq.png"></a>
+			<a href="https://passport.weibo.cn/signin/login"><img src="image/weibo.png"></a>
+			<a href="https://wx.qq.com/"><img src="image/weixin.png"></a>
+			<div id="thirddiv">制作人:2013041741 梁书豪 中北大学软件工程专业</div>
+		</div>
+	</body>
+</html>
