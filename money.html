@@ -29,31 +29,16 @@
 			}
 			else if(document.getElementById("year").value==document.getElementById("lv2").value){
 				var lixi = cunkuannum * lilv * 2;
-				var total = cunkuannum * 2 + lixi;
+				var total = cunkuannum  + lixi;
 			}
 			else if(document.getElementById("year").value==document.getElementById("lv3").value){
 				var lixi = cunkuannum * lilv * 3;
-				var total = cunkuannum * 3 + lixi;
+				var total = cunkuannum + lixi;
 			}
 			else {
 				var lixi = cunkuannum * lilv * 5 ;
-				var total = cunkuannum * 5 + lixi;
+				var total = cunkuannum + lixi;
 			}
-
-//			switch(lilv){
-//				case lv1:
-//				var lixi = cunkuannum * lilv,
-//				var total = cunkuannum + lixi;break;
-//				case lv2:
-//				var lixi = cunkuannum * lilv * 2,
-//				var total = cunkuannum * 2 + lixi;break;
-//				case lv3:
-//				var lixi = cunkuannum * lilv * 3 ,
-//				var total = cunkuannum * 3 + lixi;break;
-//				case lv4:
-//				var lixi = cunkuannum * lilv * 5,
-//				var total = cunkuannum * 5 + lixi;break;
-//			}
 			//第三步是把计算的结果写入相应的文本框，供用户观看
 			document.getElementById("lixi").value = lixi;//往文本框里填东西
 			document.getElementById("total").value = total;
