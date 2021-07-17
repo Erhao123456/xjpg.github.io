@@ -11,6 +11,54 @@
  
 <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
 <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script>
+		//定义一个函数完成存款计算
+		function calc(){//calc是自己定义的函数
+			//第一步是要获取存款金额 即获取用户输入文本框里的数值
+			var cunkuanjine = document.getElementById("amount").value;//.value就获得了该文本框的值 以8000为例
+			//这句话取到的值是“8000”不是数值是字符串
+			//“8000”->8000
+			var cunkuannum=parseInt(cunkuanjine);//把字符串转成整数
+			//第二步是开始计算
+			//先取得存款年限及其年利率value
+			var lilv = document.getElementById("year").value;
+			
+			if(document.getElementById("year").value==document.getElementById("lv1").value){
+				var lixi = cunkuannum * lilv;
+				var total = cunkuannum + lixi;
+			}
+			else if(document.getElementById("year").value==document.getElementById("lv2").value){
+				var lixi = cunkuannum * lilv * 2;
+				var total = cunkuannum * 2 + lixi;
+			}
+			else if(document.getElementById("year").value==document.getElementById("lv3").value){
+				var lixi = cunkuannum * lilv * 3;
+				var total = cunkuannum * 3 + lixi;
+			}
+			else {
+				var lixi = cunkuannum * lilv * 5 ;
+				var total = cunkuannum * 5 + lixi;
+			}
+
+//			switch(lilv){
+//				case lv1:
+//				var lixi = cunkuannum * lilv,
+//				var total = cunkuannum + lixi;break;
+//				case lv2:
+//				var lixi = cunkuannum * lilv * 2,
+//				var total = cunkuannum * 2 + lixi;break;
+//				case lv3:
+//				var lixi = cunkuannum * lilv * 3 ,
+//				var total = cunkuannum * 3 + lixi;break;
+//				case lv4:
+//				var lixi = cunkuannum * lilv * 5,
+//				var total = cunkuannum * 5 + lixi;break;
+//			}
+			//第三步是把计算的结果写入相应的文本框，供用户观看
+			document.getElementById("lixi").value = lixi;//往文本框里填东西
+			document.getElementById("total").value = total;
+		}
+	</script>
 	</head>
 	<body>
 		<div class="table text-center">
@@ -29,28 +77,29 @@
 					<td>存款年限</td>
 					<td>
 						<select id="year" class="form-control">
-							<option value="0.0175">一年(1.75%)</option>
-							<option value="0.0225">两年(2.25%)</option>
-							<option value="0.0275">三年(2.75%)</option>
-							<option value="0.0275">五年(2.75%)</option>
+							<option value="0.0175" id="lv1">一年(1.75%)</option>
+							<option value="0.0225" id="lv2">两年(2.25%)</option>
+							<option value="0.0275" id="lv3">三年(2.75%)</option>
+							<option value="0.02750" id="lv4">五年(2.75%)</option>
 						</select>
 					</td>
 				</tr>
 				<tr>
 					<td>所得利息</td>
 					<td>
-						<input type="text" class="form-control" readonly="readonly">
+						<input type="text" id="lixi" class="form-control" readonly="readonly" >
 					</td><!--readonly="readonly"表示只读-->
 				</tr>
 				<tr>
 					<td>本息合计</td>
 					<td>
-						<input type="text" id="total" class="form-control" readonly="readonly">
+						<input type="text" id="total" class="form-control" readonly="readonly" >
 					</td>
 				</tr>
 				<tr>
-					<td colspan="2">
-						<button class="btn btn-block btn-primary">计算</button>
+					<td colspan="2"><!--onclick调用函数-->
+						<!--调用函数的时候calc后边的括号也必须写-->
+						<button onclick="calc ()" class="btn btn-block btn-primary">计算</button>
 					</td>
 				</tr>
 				<tr class="text-center">
