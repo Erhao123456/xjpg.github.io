@@ -14,8 +14,19 @@
 	<script>
 		//定义一个函数完成存款计算
 		function calc(){//calc是自己定义的函数
+			//在函数一开始的这里做表单验证(看用户输入的是不是数字)
+			
 			//第一步是要获取存款金额 即获取用户输入文本框里的数值
 			var cunkuanjine = document.getElementById("amount").value;//.value就获得了该文本框的值 以8000为例
+			//定义一个正则表达式(规则表达式)，假设我们要求的存款金额是6位数字
+			var regExp = /^[0-9]{2,6}$/;//文本框里数字最少输入2到6位的数字(0-9)
+			//正则表达式语法/^开头 $/结尾			
+			if(!regExp.test(cunkuanjine)){//用户输入和规则匹配test会返回true反之test会返回faule
+				//能到此处说明用户输入不合法
+				document.getElementById("amount").value="输入不合法！(输入必须是2到6位数字)"
+				document.getElementById("amount").style="color:red"
+				return;//阻止程序继续执行
+			}
 			//这句话取到的值是“8000”不是数值是字符串
 			//“8000”->8000
 			var cunkuannum=parseInt(cunkuanjine);//把字符串转成整数
@@ -43,6 +54,13 @@
 			document.getElementById("lixi").value = lixi;//往文本框里填东西
 			document.getElementById("total").value = total;
 		}
+		function clearContent(){
+			//清空文本框
+			document.getElementById("amount").value='';
+			document.getElementById("amount").style="color:back"
+		}
+		
+		
 	</script>
 	</head>
 	<body>
@@ -54,12 +72,12 @@
 				</tr>
 				<tr>
 					<td>存款金额</td>
-					<td>
-						<input class="form-control" type="text" placeholder="请输入存款金额" id="amount">
+					<td><!--onfocus是鼠标点击是获得焦点即鼠标点击执行onfocus语句-->
+						<input onfocus="clearContent()" class="form-control" type="text" placeholder="请输入存款金额" id="amount">
 					</td>
 				</tr>
 				<tr>
-					<td>存款年限</td>
+					<td>存款年限</td>r
 					<td>
 						<select id="year" class="form-control">
 							<option value="0.0175" id="lv1">一年(1.75%)</option>
