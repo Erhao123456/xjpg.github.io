@@ -17,11 +17,12 @@
 				//1.获得工资看输入合法吗
 				var sal = document.getElementById("salary").value;
 				var regExp = /^[0-9]{4,6}$/;
-				return;//不合法时return阻止程序运行
+			
 				//规定工资在4-6位之间
 				if(!regExp.test(sal)){
 					document.getElementById("salary").value="必须输入合法的工资数(4-6位数字)"
 					document.getElementById("salary").style="color:red";
+					return;//不合法时return阻止程序运行
 				}
 				//2.如果输入合法的话开始计算
 				//3.把计算结果放到单元格里
