@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>无标题文档</title>
+		<link href="css/style.css" rel="stylesheet" type="text/css" />
+		<link href="css/select.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/jquery.idTabs.min.js"></script>
+		<script type="text/javascript" src="js/select-ui.min.js"></script>
+		<script type="text/javascript" src="editor/kindeditor.js"></script>
+
+		<script type="text/javascript">
+			KE.show({
+				id: 'content7',
+				cssPath: './index.css'
+			});
+		</script>
+
+		<script type="text/javascript">
+			$(document).ready(function(e) {
+				$(".select1").uedSelect({
+					width: 345
+				});
+				$(".select2").uedSelect({
+					width: 167
+				});
+				$(".select3").uedSelect({
+					width: 100
+				});
+			});
+		</script>
+		<script>
+			function checkUsername() {
+				var uname = document.getElementById("Username").value
+				var unameTip = document.getElementById("UsernameTip")
+				var reg = /^[a-zA-Z]{1}[a-zA-Z0-9]{2,14}$/
+				//字母开头区分大小写 1位和2-14位
+				if(!reg.test(uname)) {
+					unameTip.innerHTML = "用户名不合法"
+					unameTip.style = "color:red"
+				} else {
+					unameTip.innerHTML = ""
+					unameTip.style = "color:black"
+				}
+			}
+
+			function displayDate() {
+				document.getElementById("demo").innerHTML = Date();
+			}
+		</script>>
+	</head>
+
+	<body>
+		<div class="place">
+			<span>位置：</span>
+			<ul class="placeul">
+				<li>
+					<a href="#">首页</a>
+				</li>
+				<li>
+					<a href="#">录入学分</a>
+				</li>
+			</ul>
+		</div>
+		<div class="formbody">
+			<div id="tab1" class="tabson">
+				<ul class="forminfo">
+					<li>
+						<label>学生姓名<b>*</b></label>
+						<input placeholder="2-30个汉字字母组合" name="classid" type="text" class="dfinput" style="width:345px;" />
+					</li>
+					<li>
+						<label>学号<b>*</b></label>
+						<input name="classid" type="text" class="dfinput" style="width:345px;" />
+					</li>
+					<li>
+						<label>年级<b>*</b></label>
+						<input name="classid" type="text" class="dfinput" style="width:345px;" />
+					</li>
+					<li>
+						<label>院系<b>*</b></label>
+						<div class="vocation">
+							<select class="select3">
+								<option>软件学院</option>
+								<option>大数据学院</option>
+								<option>理学院</option>
+								<option>能源与动力工程学院</option>
+								<option>人文学院</option>
+							</select>
+						</div>
+					</li>
+					<li>
+						<label>分值<b>*</b></label>
+						<div class="vocation">
+							<select class="select3">
+								<option>1分</option>
+								<option>1.5分</option>
+								<option>2分</option>
+								<option>2.5分</option>
+							</select>
+						</div>
+					</li>
+					<li>
+						<label>事由<b>*</b></label>
+						<input name="classid" type="radio" />公开课
+					</li>
+					<li>
+						<label>取得时间<b>*</b></label>
+						<div class="vocation">
+							<select class="select3">
+								<option>2020/7/21</option>
+								<option>2020/7/20</option>
+								<option>2020/7/19</option>
+								<option>2020/7/18</option>
+								<option>2020/7/17</option>
+							</select>
+						</div>
+					</li>
+					<li>
+						<label>录入时间<b>*</b></label>
+						<p id="demo">
+							<input name="classid" type="text" readonly="readonly" class="dfinput" style="width:345px;" />
+							<button type="button" onclick="displayDate()">显示日期</button>
+						</p>
+					</li>
+					<li>
+						<label>录入人<b>*</b></label>
+						<input placeholder="2-30个汉字字母组合" name="classid" type="text" class="dfinput" style="width:345px;" />
+					</li>
+					<li>
+						<label>备注<b>*</b></label>
+						<input placeholder="可不填" name="classid" type="text" class="dfinput" style="width:345px;" />
+					</li>
+					<li><label>&nbsp;</label><input name="" type="button" class="btn" value="提交" /></li>
+				</ul>
+			</div>
+
+	</body>
+
+</html>
